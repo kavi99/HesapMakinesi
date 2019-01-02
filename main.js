@@ -76,8 +76,6 @@ var tuslar = [
 ]
 function tasarimGetir(){ 
    
-    
-
    var makine = '<div class="makine"><div id="hafiza"></div><div class="ekran" id="cikti"></div><button class="tus" onclick="yazdir(this),temizle()">'+tuslar[0].id+'</button><button class="tus" onclick="yazdir(this),temizle()">'+tuslar[1].id+'</button><button class="tus" onclick="yazdir(this)">'+tuslar[2].id+'</button><button class="tus" onclick="yazdir(this)">'+tuslar[3].id+'</button>'+
    '<button class="tus" onclick="yazdir(this)">'+tuslar[4].id+'</button><button class="tus" onclick="yazdir(this)">'+tuslar[5].id+'</button><button class="tus" onclick="yazdir(this)">'+tuslar[6].id+'</button><button class="tus" onclick="yazdir(this)">'+tuslar[7].id+'</button><button class="tus" onclick="yazdir(this),yuzde()">'+tuslar[8].id+'</button>'+
    '<button class="tus" onclick="yazdir(this),kok(),esittir()">'+tuslar[9].id+'</button><button class="tus" onclick="yazdir(this)">'+tuslar[10].id+'</button><button class="tus" onclick="yazdir(this)">'+tuslar[11].id+'</button><button class="tus" onclick="yazdir(this)">'+tuslar[12].id+'</button><button class="tus" onclick="yazdir(this),carp()">'+tuslar[13].id+'</button>'+
@@ -102,13 +100,12 @@ function yazdir(yazi){
 
 }function topla(){
 
-   document.getElementById("hafiza").innerHTML = document.getElementById("cikti").innerHTML; 
+   document.getElementById("hafiza").innerHTML = document.getElementById("cikti").innerHTML;
    var sayi1 = document.getElementById("cikti").innerHTML;
    sayi1 = parseInt(sayi1);
    document.getElementById("cikti").innerHTML = "";
    document.getElementById("kontrol").innerHTML= "topla";
    
-
 }function cikar(){
 
    document.getElementById("hafiza").innerHTML = document.getElementById("cikti").innerHTML; 
@@ -194,7 +191,8 @@ function esittir(){
       var sayi2 = document.getElementById("cikti").innerHTML;
       sayi2 = parseInt(sayi2);
       document.getElementById("cikti").innerHTML = (sayi1/100)*sayi2;
-
+      document.getElementById("cikti").innerHTML = document.getElementById("cikti").innerHTML.substr(0,10);
+      
    }else if (document.getElementById("kontrol").innerHTML == "kok"){
 
       var sayi1 = document.getElementById("hafiza").innerHTML;
